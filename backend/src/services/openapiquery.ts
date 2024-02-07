@@ -15,7 +15,7 @@ const queryOpenAPI = async (headline: string, body: string): Promise<string | nu
         content: `i'm creating a water cooler sports chat api and want you to parse the following headline and info 
                   to come up with a quick tidbit someone who knows nothing about sports can say to fit in.
                   Please format your answer as a JSON response with the data being the string that is the tidbit
-                  as the key "data". Please make the response short (2 sentences max) and casual, in the voice of a middle-aged sports fan.
+                  as the key "data". Please make the response short (2 sentences max) and casual, in the voice of a middle-aged sports fan trying to sound casual
 
                  headline: ${headline}
                  
@@ -25,9 +25,7 @@ const queryOpenAPI = async (headline: string, body: string): Promise<string | nu
     max_tokens: 150,
     model: 'gpt-3.5-turbo',
   });
-  console.log(completion);
-  console.log(completion.choices[0]);
-  console.log('type: ', typeof completion.choices[0]);
+
   return completion.choices[0].message.content;
 };
 
