@@ -1,9 +1,7 @@
 import express from 'express';
 const router = express.Router();
-import postToOpenApi from '../controllers/openapi';
-import postToNewsApi from '../controllers/news';
+import fetchStoriesAndQueryGPT from '../controllers/news';
 
-router.post('/open-api', postToOpenApi);
-router.post('/news', postToNewsApi)
+router.post('/sports-news', fetchStoriesAndQueryGPT)
 
 export default router;
